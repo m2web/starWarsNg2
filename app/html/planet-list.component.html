@@ -1,0 +1,17 @@
+ <h3>Planets</h3>
+ <section>
+    <section *ngIf="isLoading && !errorMessage">
+    Loading our hyperdrives!!! Retrieving data...
+    </section>
+      <ul>
+        <!-- this is the new syntax for ng-repeat -->
+        <li *ngFor="let planet of planets">
+            <a href="#" [routerLink]="['/planets', planet.id]">
+          {{planet.name}}
+          </a>
+        </li>
+      </ul>
+      <section *ngIf="errorMessage">
+        {{errorMessage}}
+      </section>
+  </section>
